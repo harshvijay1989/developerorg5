@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Quote</fullName>
+    <active>false</active>
+    <errorConditionFormula>OR(AND(
+    ISCHANGED(Primary__c), GrandTotal__c &gt; (Account_Name__r.HMC_Credit_Limit__c + Advance_Amount__c)),
+AND(
+    ISCHANGED(Primary__c), GrandTotal__c &gt; (Account_Name__r.HMC_Credit_Limit__c ))
+)</errorConditionFormula>
+    <errorMessage>Please complete payment</errorMessage>
+</ValidationRule>

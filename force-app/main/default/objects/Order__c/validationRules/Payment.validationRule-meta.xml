@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payment</fullName>
+    <active>false</active>
+    <errorConditionFormula>AND (
+ISPICKVAL( Status__c , &apos;Truck Load Challan&apos;),
+IF(TotalAmount__c &gt; (AccountId__r.HMC_Credit_Limit__c +  Advance_Payment__c  ),True,False)
+)</errorConditionFormula>
+    <errorMessage>Please complete Payment.</errorMessage>
+</ValidationRule>
